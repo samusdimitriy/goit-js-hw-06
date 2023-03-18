@@ -32,6 +32,8 @@ function createBoxes(amount) {
     arr.push(div);
   }
   boxes.append(...arr);
+
+  input.value = "";
 }
 
 destroyBtn.addEventListener("click", destroyBoxes);

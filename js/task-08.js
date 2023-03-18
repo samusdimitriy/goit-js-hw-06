@@ -18,4 +18,6 @@ function onFormSubmit(event) {
   };
 
   console.log(formData);
+
+  event.currentTarget.reset();
 }

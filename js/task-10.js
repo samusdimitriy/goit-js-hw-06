@@ -3,13 +3,6 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-// Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает кнопку Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
-// Создай функцию createBoxes(amount), которая принимает один параметр - число. Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
-
-// Размеры самого первого <div> - 30px на 30px.
-// Каждый элемент после первого, должен быть шире и выше предыдущего на 10px.
-// Все элементы должены иметь случайный цвет фона в формате HEX. Используй готовую функцию getRandomHexColor для получения цвета.
-// Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
 const input = document.querySelector("input");
 const createBtn = document.querySelector("button[data-create]");
@@ -23,8 +16,11 @@ function createBoxes(amount) {
   amount = input.value;
   const arr = [];
 
-  if (amount < 1 || amount > 100) {
-    alert("Please enter a number between 1 and 100.");
+  const min = input.min;
+  const max = input.max;
+
+  if (amount < min || amount > max) {
+    alert(`Please enter a number between ${min} and ${max}`);
     return;
   }
 
@@ -36,7 +32,6 @@ function createBoxes(amount) {
     arr.push(div);
   }
   boxes.append(...arr);
-  console.log("boxes", boxes);
 }
 
 destroyBtn.addEventListener("click", destroyBoxes);

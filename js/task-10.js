@@ -13,11 +13,11 @@ const boxes = document.querySelector("#boxes");
 createBtn.addEventListener("click", createBoxes);
 
 function createBoxes(amount) {
-  amount = input.value;
+  amount = Number(input.value);
   const arr = [];
 
-  const min = input.min;
-  const max = input.max;
+  const min = Number(input.min);
+  const max = Number(input.max);
 
   if (amount < min || amount > max) {
     alert(`Please enter a number between ${min} and ${max}`);

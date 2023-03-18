@@ -16,10 +16,9 @@ function createBoxes(amount) {
   amount = Number(input.value);
   const arr = [];
 
-  const min = Number(input.min);
-  const max = Number(input.max);
+  const { min, max } = input;
 
-  if (amount < min || amount > max) {
+  if (amount < Number(min) || amount > Number(max)) {
     alert(`Please enter a number between ${min} and ${max}`);
     return;
   }
